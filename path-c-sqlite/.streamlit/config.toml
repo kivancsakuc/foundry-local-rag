@@ -1,0 +1,9 @@
+# The whole point of this project is that it makes no network calls. Streamlit's
+# default usage-statistics ping would quietly break that claim, and its default
+# bind address exposes the app beyond this machine.
+[browser]
+gatherUsageStats = false
+
+[server]
+address = "127.0.0.1"
+headless = true

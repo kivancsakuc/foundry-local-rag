@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Local data / model artifacts
+# Leading **/ so these match in every path-* subdirectory, not just the repo root.
+**/data/*.db
+**/data/*.db-shm
+**/data/*.db-wal
+*.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local run logs
+*.log
