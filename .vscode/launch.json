@@ -1,0 +1,65 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Path C: Streamlit app",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": ["run", "app.py"],
+      "cwd": "${workspaceFolder}/path-c-sqlite",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Path C: ask.py (full pipeline, with timings)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/path-c-sqlite/ask.py",
+      "cwd": "${workspaceFolder}/path-c-sqlite",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Path C: retrieval_check.py (no chat model, fast)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/path-c-sqlite/retrieval_check.py",
+      "cwd": "${workspaceFolder}/path-c-sqlite",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Path C: ingest.py (re-index the knowledge base)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/path-c-sqlite/ingest.py",
+      "cwd": "${workspaceFolder}/path-c-sqlite",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Path B: main.py (in-memory embeddings CLI)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/path-b-embeddings/main.py",
+      "cwd": "${workspaceFolder}/path-b-embeddings",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Path A: server (Node, port 3000)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/path-a-tfidf/src/server.js",
+      "cwd": "${workspaceFolder}/path-a-tfidf",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Path A: retrieval_check.js",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/path-a-tfidf/retrieval_check.js",
+      "cwd": "${workspaceFolder}/path-a-tfidf",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

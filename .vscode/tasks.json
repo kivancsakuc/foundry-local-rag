@@ -1,0 +1,79 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Foundry: start service",
+      "detail": "Run this first after a reboot. Without it, everything else hangs silently.",
+      "type": "shell",
+      "command": "foundry server start",
+      "problemMatcher": []
+    },
+    {
+      "label": "Foundry: status",
+      "type": "shell",
+      "command": "foundry status",
+      "problemMatcher": []
+    },
+    {
+      "label": "Path A: ingest",
+      "type": "shell",
+      "command": "npm run ingest",
+      "options": { "cwd": "${workspaceFolder}/path-a-tfidf" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Path A: start server",
+      "type": "shell",
+      "command": "npm start",
+      "options": { "cwd": "${workspaceFolder}/path-a-tfidf" },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Path A: test",
+      "type": "shell",
+      "command": "npm test",
+      "options": { "cwd": "${workspaceFolder}/path-a-tfidf" },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Path C: ingest",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe ingest.py",
+      "options": { "cwd": "${workspaceFolder}/path-c-sqlite" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Path C: run Streamlit",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe -m streamlit run app.py",
+      "options": { "cwd": "${workspaceFolder}/path-c-sqlite" },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Path C: test",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe -m unittest test_rag -v",
+      "options": { "cwd": "${workspaceFolder}/path-c-sqlite" },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Compare retrieval: TF-IDF vs embeddings",
+      "detail": "Runs both retrieval checks back to back. This is the comparison for the report.",
+      "type": "shell",
+      "command": "node retrieval_check.js; cd ../path-c-sqlite; ../.venv/Scripts/python.exe retrieval_check.py",
+      "options": { "cwd": "${workspaceFolder}/path-a-tfidf" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Export CURRICULUM.md to .docx",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe tools/md_to_docx.py CURRICULUM.md -o Summer_School_Foundry_Local_Plan_REVISED.docx",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}
