@@ -9,13 +9,13 @@
 
 ## Goal
 
-Guide beginner computer science students through a full-time, one-month summer program
-in which they build a local question-answering assistant using Microsoft Foundry Local
+As a team, we built a local question-answering assistant using Microsoft Foundry Local
 for offline model inference and the RAG (Retrieval-Augmented Generation) pattern.
 
-By the end, each team has a working offline assistant that answers questions about a
-small document collection by retrieving passages locally and feeding them to an
-on-device language model. No cloud account. No network call at inference time.
+Over the course of a one-month summer program, we developed a fully offline assistant
+capable of answering questions about a small document collection by retrieving relevant
+passages locally and feeding them to an on-device language model. The entire system
+works without a cloud account or any network calls during inference.
 
 ---
 
@@ -126,9 +126,10 @@ rather than with a clear error.
 
 ## Phase 1 (Weeks 1-2): Foundations By Building
 
-The original plan spent two weeks on concepts before students built anything. This
-version front-loads a working system: students see RAG end to end in week 1 and then
-learn each component by replacing it.
+We decided not to spend the first two weeks focusing only on concepts. Instead, we
+designed the program around building a working system from the start. In week 1,
+students experience the full RAG pipeline end to end, and each component is then taught
+in more detail by having them replace and improve parts of the system themselves.
 
 ### Week 1 — RAG End To End With TF-IDF (Path A)
 

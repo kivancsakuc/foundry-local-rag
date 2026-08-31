@@ -7,6 +7,8 @@ all local.
 This repository is both an internship project and the working reference for a one-month
 summer school curriculum. The curriculum itself is [`CURRICULUM.md`](CURRICULUM.md).
 
+Built by **Kıvanç Sakuçoğlu** and **Rüya Ödül Sakuçoğlu** for the Microsoft Summer School 2026.
+
 ## Why three implementations
 
 Each one exists to expose the limitation that motivates the next.
