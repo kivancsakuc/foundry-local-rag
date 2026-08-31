@@ -1,0 +1,24 @@
+# Python dependencies for Path B (path-b-embeddings/) and Path C (path-c-sqlite/).
+# Path A is Node.js; its dependencies live in path-a-tfidf/package.json.
+#
+#     pip install -r requirements.txt
+#
+# The SDK ships as two packages for the same API. The Windows build (-winml)
+# requires a real DirectX 12 GPU; see README.md. The marker picks the right one.
+#
+# Versions below are the ones this project was measured on (see RESULTS.md).
+# The non-Windows package was not exercised on the measurement machine, so it
+# carries a floor rather than a pin.
+
+foundry-local-sdk-winml==1.2.4 ; sys_platform == "win32"
+foundry-local-sdk>=1.2.4 ; sys_platform != "win32"
+
+# Path C's chat interface. Path B is a CLI and does not need it.
+streamlit==1.62.0
+
+# openai is pulled in automatically as a dependency of the SDK — the SDK's own
+# get_chat_client() wraps it, so nothing here imports it directly.
+
+# tools/md_to_docx.py only. Not needed to run any of the three paths; it renders
+# CURRICULUM.md to the .docx in the repo root.
+python-docx==1.2.0

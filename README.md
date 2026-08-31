@@ -75,12 +75,12 @@ npm test
 ```bash
 py -3.12 -m venv .venv
 .venv\Scripts\activate
-pip install foundry-local-sdk-winml openai streamlit
+pip install -r requirements.txt
 python path-b-embeddings/main.py
 ```
 
-On macOS and Linux use `foundry-local-sdk` instead of `foundry-local-sdk-winml`, and
-`source .venv/bin/activate`.
+`requirements.txt` selects the right SDK package per platform, so the same command
+works everywhere. On macOS and Linux activate with `source .venv/bin/activate`.
 
 ### Path C — embeddings + SQLite + Streamlit
 
@@ -141,6 +141,17 @@ Two checks matter more than any others:
 Path C shows the retrieved chunks and their similarity scores next to every answer, on
 purpose. When an answer is wrong, the first question is always whether the right passage
 was retrieved at all.
+
+## What is in this repository
+
+| Path | What it is |
+|---|---|
+| `knowledge-base/` | The shared corpus. All three paths index it |
+| `path-a-tfidf/`, `path-b-embeddings/`, `path-c-sqlite/` | The three implementations |
+| `CURRICULUM.md` | The revised one-month curriculum — the source of record |
+| `Summer_School_Foundry_Local_Plan_REVISED.docx` | The same curriculum as Word, for reviewers who work in Word. **Generated, not edited by hand** |
+| `tools/md_to_docx.py` | Generates that .docx: `python tools/md_to_docx.py CURRICULUM.md -o Summer_School_Foundry_Local_Plan_REVISED.docx`. Re-run it after editing `CURRICULUM.md`, or the two drift apart |
+| `RESULTS.md` | Every measured number, and how to reproduce it |
 
 ## Known limitations
 
